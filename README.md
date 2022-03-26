@@ -22,9 +22,11 @@ Criteria need:
 
 ## Acknowledgments 
 Showing appreciation to our study group! 
-* James Edwards
 * Anthony Chang
+* Fisher Davis
+* James Edwards
+* Noah Gaston
 * Eric Hurst
 * Seamona Stewart
-* Fisher Davis
-* Noah Gaston
+
+
