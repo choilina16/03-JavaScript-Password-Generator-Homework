@@ -1,4 +1,5 @@
-// code keeps looping the prompts...and I don't know why =_=
+// loops 2 times....and then doesn't return random items :O
+
 
 var generateBtn = document.querySelector("#generate");
 
@@ -12,8 +13,6 @@ var special = "~!@#$%^&*()".split('');
 // function for the window prompts given to user for password options
 function generatePassword() {
 
-  var userChoices =[];
-
   // window prompt will show asking user to to input a number between 8-128
   var passwordLength = window.prompt("How many characters would you like your password to have? Values from 8-128 only.");
 
@@ -23,33 +22,39 @@ function generatePassword() {
     return '';
   } 
 
+  var userChoices =[];
+
   // if you click OK to lowercases, then it's added to the userChoice.
   // += adds the userChoice to the right
-  if (confirm("Click OK to confirm including lowercase characters.")) {
-    userChoices = userChoices += lowerCase;
+  var lowerCaseChoice = confirm("Click OK to confirm including lowercase characters.");
+    if (lowerCaseChoice) {
+      userChoices = userChoices += lowerCaseChoice;
   }
 
   // if you click OK to uppercases, then it's added to the userChoice.
-  if (confirm("Click OK to confirm including uppercase characters.")) {
-    userChoices = userChoices += upperCase;
-  }
+  var upperCaseChoice = confirm("Click OK to confirm including uppercase characters.");
+    if (upperCaseChoice) {
+      userChoices = userChoices += upperCaseChoice;
+    }
 
   // if you click OK to numerics, then it's added to the userChoice.
-  if (confirm("Click OK to confirm including numeric characters.")) {
-    userChoices = userChoices += numbers;
+  var numberChoice = confirm("Click OK to confirm including numeric characters.");
+    if (numberChoice) {
+      userChoices = userChoices += numberChoice;
   }
 
   // if you click OK to special characters, then it's added to the userChoice.
-  if (confirm("Click OK to confirm including special characters.")) {
-    userChoices = userChoices += special;
+  var specialChoice = confirm("Click OK to confirm including special characters.");
+    if (specialChoice) {
+      userChoices = userChoices += specialChoice;
   }
 
   // for loop to randomize everyhthing
   var password = "";
 
   for (var i = 0; i < passwordLength; i++) {
-    var randomPassword = Math.floor(Math.random() * userChoice.length);
-    password = password += userChoices[randomPassword];
+    var newPassword = Math.floor(Math.random() * userChoices.length);
+    password = password + userChoices[newPassword];
   }
   return password;
 }
@@ -61,11 +66,11 @@ function writePassword() {
   generatePassword();  
 
   if(generatePassword) {
-    var Password = generatePassword();
+    var password = generatePassword();
     var passwordText = document.querySelector("#password");
   
     // displays the password on the screen
-    passwordText.value = Password;
+    passwordText.value = password;
   }
 }
 
