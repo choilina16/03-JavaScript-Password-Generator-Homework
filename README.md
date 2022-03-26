@@ -27,6 +27,7 @@ Showing appreciation to our study group!
 * James Edwards
 * Noah Gaston
 * Eric Hurst
+* Brian Samuels
 * Seamona Stewart
 
 
